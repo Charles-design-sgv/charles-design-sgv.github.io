@@ -1,1 +1,774 @@
-# charles-design-sgv.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics in Aeronautics | Industry Insights</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #4a5568;
+            --white: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav li {
+            margin-left: 2rem;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .hero {
+            background: linear-gradient(rgba(26,54,93,0.85), rgba(26,54,93,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a365d"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%233182ce" stroke-width="1"/></svg>');
+            background-size: cover;
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2c5aa0;
+        }
+        section {
+            padding: 4rem 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .highlight {
+            background-color: #ebf8ff;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .footer-links {
+            display: flex;
+            list-style: none;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        .copyright {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+        }
+        
+        /* Expert Profiles */
+        .expert-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .expert-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .expert-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .expert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .expert-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-right: 1.5rem;
+        }
+        
+        .expert-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .expert-info p {
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .expert-bio {
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .expert-contribution {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .expert-contribution h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Interview Styles */
+        .interview-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .interview-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-right: 2.5rem;
+            box-shadow: 0 8px 25px rgba(49, 130, 206, 0.3);
+        }
+        
+        .profile-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .profile-info p {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .profile-contact {
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .qa-container {
+            display: grid;
+            gap: 2.5rem;
+        }
+        
+        .qa-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .qa-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .question {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .question::before {
+            content: "Q:";
+            font-weight: 800;
+            color: var(--accent);
+            margin-right: 0.8rem;
+            font-size: 1.1em;
+        }
+        
+        .answer {
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .answer::before {
+            content: "A:";
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 0.8rem;
+            font-size: 1.1em;
+        }
+        
+        .key-insight {
+            background: linear-gradient(135deg, #ebf8ff, #e6fffa);
+            border-left: 6px solid var(--accent);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .key-insight h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .key-insight h3::before {
+            content: "💡";
+            margin-right: 0.8rem;
+            font-size: 1.5em;
+        }
+        
+        .key-insight p {
+            color: var(--dark);
+            line-height: 1.7;
+            font-style: italic;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .interview-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .nav-btn {
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-btn:hover {
+            background: #2c5aa0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(49, 130, 206, 0.4);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-content {flex-direction: column; text-align: center;}
+            nav ul {margin-top: 1rem; justify-content: center;}
+            nav li {margin: 0 0.5rem;}
+            .hero h1 {font-size: 2.2rem;}
+            .interview-header {flex-direction: column; text-align: center;}
+            .profile-img {margin-right: 0; margin-bottom: 1.5rem;}
+            .qa-item {padding: 1.5rem;}
+            .interview-navigation {flex-direction: column; gap: 1rem;}
+            .nav-btn {justify-content: center;}
+            .expert-header {flex-direction: column; text-align: center;}
+            .expert-avatar {margin-right: 0; margin-bottom: 1rem;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Aero<span>Data</span> Insights</div>
+                <nav>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#applications">Applications</a></li>
+                        <li><a href="#experts">Industry Experts</a></li>
+                        <li><a href="#interviews">Interviews</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Data Analytics in Aeronautics</h1>
+            <p>
+                Transforming aviation through data-driven insights, predictive maintenance
+                and operational optimisation. Explore how airlines, manufacturers and
+                researchers leverage data to make flying safer, greener and more efficient.
+            </p>
+            <a href="#interviews" class="btn">View Expert Interviews</a>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>What is Data Analytics?</h2>
+                <p>
+                    Data analytics is the science of analysing raw datasets to uncover patterns, derive
+                    conclusions and support informed decision‑making. Modern analytics combines statistics,
+                    algorithms and automation to turn unstructured data into actionable insights.
+                </p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Descriptive Analytics</h3>
+                    <p>Summarises historical data to understand what has happened. Techniques like aggregation and data mining reveal trends and anomalies over time.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h3>Diagnostic Analytics</h3>
+                    <p>Explores why something happened by drilling into data, performing correlations and root‑cause analyses to explain behaviours and events.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Uses statistical models and machine learning to forecast what could happen next. These models learn from historical data and account for uncertainty in future outcomes.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Prescriptive Analytics</h3>
+                    <p>Recommends actions based on predicted scenarios, quantifying the impact of different decisions and helping stakeholders choose the best course of action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section id="applications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Data Analytics in Aeronautics</h2>
+                <p>
+                    Modern aircraft generate hundreds of gigabytes of data per flight, from high‑frequency sensor streams to weather and operational logs. Integrating these sources creates a holistic view of each flight's context, enabling predictive maintenance, fuel optimisation and smarter operations.
+                </p>
+            </div>
+            <div class="highlight">
+                <h3>Key Data Sources in Aviation</h3>
+                <ul>
+                    <li><strong>Flight Data Recorders (FDR)</strong> – capture second‑by‑second engine parameters, control inputs and performance metrics during every flight.</li>
+                    <li><strong>Quick Access Recorders (QAR)</strong> – provide high‑frequency downloads of aircraft system data for routine analysis.</li>
+                    <li><strong>Maintenance Logs</strong> – detailed history of components, essential for supervised learning and reliability analysis.</li>
+                    <li><strong>ADS‑B & ATC Data</strong> – positional and trajectory information from surveillance and air‑traffic control.</li>
+                    <li><strong>Weather & Environment</strong> – predicted and actual atmospheric conditions like wind, temperature and hazards.</li>
+                    <li><strong>Passenger & Cargo Data</strong> – load and scheduling information that influences weight, balance and cost.</li>
+                </ul>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Predictive Maintenance</h3>
+                    <p>Machine‑learning models trained on FDR/QAR streams and maintenance records can anticipate component failures before they occur, reducing unscheduled downtime and improving safety.</p>
+                </div>
+                <div class="card">
+                    <h3>Fuel Optimisation</h3>
+                    <p>By analysing flight data, weather and air‑traffic constraints, airlines identify fuel‑efficient routes, speeds and altitudes, achieving cost savings and lower emissions.</p>
+                </div>
+                <div class="card">
+                    <h3>Flight Operations</h3>
+                    <p>Integrated analytics help optimise crew scheduling, aircraft turnaround and ground operations, reducing delays and enhancing punctuality.</p>
+                </div>
+                <div class="card">
+                    <h3>Safety & Compliance</h3>
+                    <p>Data‑driven safety programmes analyse incident reports and trend indicators, supporting proactive risk mitigation and regulatory compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Experts -->
+    <section id="experts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Leading Experts in Aeronautical Data Analytics</h2>
+                <p>
+                    Meet the pioneers who are shaping the future of aviation through data science and advanced analytics
+                </p>
+            </div>
+
+            <div class="expert-profiles">
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">DT</div>
+                        <div class="expert-info">
+                            <h3>Dr. Dothang Truong</h3>
+                            <p>Professor of Aviation Data Science</p>
+                        </div>
+                    </div>
+                    <div class="expert-bio">
+                        <p>Dr. Truong is a renowned expert in applying big data and AI techniques to flight operations and safety. His research harnesses large-scale flight data, safety reports, and sensor streams to build predictive models that enhance aviation safety, forecast delays, and optimize air traffic management.</p>
+                    </div>
+                    <div class="expert-contribution">
+                        <h4>Key Contribution</h4>
+                        <p>Pioneered the integration of machine learning with aviation safety systems, developing predictive models that have been adopted by major airlines for proactive risk management.</p>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">LH</div>
+                        <div class="expert-info">
+                            <h3>Dr. Leila Halawi</h3>
+                            <p>Associate Professor & Research Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="expert-bio">
+                        <p>Dr. Halawi specializes in business intelligence, analytics, and ethics in aviation. She combines information systems with predictive analytics to promote sustainable aviation, emphasizing that data-driven decisions must integrate ethical and human-centric perspectives.</p>
+                    </div>
+                    <div class="expert-contribution">
+                        <h4>Key Contribution</h4>
+                        <p>Developed ethical frameworks for AI implementation in aviation, ensuring that data analytics solutions prioritize safety, transparency, and human oversight in critical decision-making processes.</p>
+                    </div>
+                </div>
+
+                <div class="expert-card">
+                    <div class="expert-header">
+                        <div class="expert-avatar">MS</div>
+                        <div class="expert-info">
+                            <h3>Dr. Mark S. Daskilewicz</h3>
+                            <p>Aerospace Engineering Professor</p>
+                        </div>
+                    </div>
+                    <div class="expert-bio">
+                        <p>Dr. Daskilewicz focuses on multidisciplinary design optimization and data-driven aircraft design. His work integrates computational methods with real-world aviation data to optimize aircraft performance, reduce environmental impact, and improve operational efficiency.</p>
+                    </div>
+                    <div class="expert-contribution">
+                        <h4>Key Contribution</h4>
+                        <p>Created advanced optimization algorithms that use operational data to improve aircraft design processes, leading to more fuel-efficient and environmentally friendly aircraft configurations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interviews -->
+    <section id="interviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>Expert Interviews</h2>
+                <p>
+                    In-depth conversations with leading professionals in aeronautical data analytics
+                </p>
+            </div>
+
+            <!-- Professor Howard Glanton Interview -->
+            <div class="interview-section">
+                <div class="interview-header">
+                    <div class="profile-img">HG</div>
+                    <div class="profile-info">
+                        <h3>Prof. Howard Glanton</h3>
+                        <p>Professor & Data Analytics Consultant in Aeronautics</p>
+                        <p>Canada</p>
+                        <p class="profile-contact">howardglanton@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="qa-container">
+                    <div class="qa-item">
+                        <div class="question">Could you summarise your current research and teaching focus in aeronautical data analytics?</div>
+                        <div class="answer">
+                            My research focuses on developing advanced predictive maintenance models using flight data recorders (FDR) and quick access recorder (QAR) data. We're integrating statistical learning with domain knowledge from aircraft systems to create more accurate failure prediction algorithms. In my teaching, I emphasise both the theoretical foundations of data science and their practical applications in aviation contexts, particularly in my graduate courses on time‑series analysis and machine learning for engineers.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">Which datasets have proven most valuable for predictive maintenance research in aviation?</div>
+                        <div class="answer">
+                            The most valuable datasets combine multiple sources: high‑frequency FDR streams capturing engine parameters and vibrations, FOQA summaries, ADS‑B data for trajectory context, and comprehensive maintenance logs (MRO records). The real challenge lies in synchronising these disparate data sources and creating accurate labels for supervised learning, as actual failure events are fortunately rare in aviation.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">How do you validate predictive models before they can be recommended for maintenance decisions?</div>
+                        <div class="answer">
+                            We employ rigorous validation methodologies including temporal hold‑out windows for time‑series data, domain‑specific failure case studies, and appropriate metrics for imbalanced datasets like precision‑recall curves and F2 scores. Crucially, we always involve experienced aircraft engineers in the validation process – their domain expertise is irreplaceable for checking model outputs against real‑world experience and preventing potentially costly automated decisions.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What are the most common pitfalls you see students and practitioners encounter in this field?</div>
+                        <div class="answer">
+                            The primary pitfalls include overfitting on heavily engineered features without proper cross‑validation, inadequate handling of timestamp alignment across data sources, neglecting operational constraints that may render theoretically sound solutions impractical, and most importantly, failing to consult domain experts early in the development pipeline. Many promising academic models fail when confronted with the realities of aircraft maintenance operations.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">How can academic projects in this domain maintain industry relevance?</div>
+                        <div class="answer">
+                            Industry relevance requires several key elements: using realistic datasets (whether public flight records or properly constructed synthetic data), thoroughly documenting assumptions and limitations, implementing end‑to‑end pipelines rather than isolated models, and seriously considering deployment aspects like MLOps practices and model monitoring. We encourage students to present their work to industry panels and incorporate their feedback throughout the project lifecycle.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">How are digital twins transforming aircraft design and maintenance?</div>
+                        <div class="answer">
+                            Digital twins are dynamic virtual replicas of physical assets or systems. By integrating IoT sensors, AI, and cloud computing, they enable real-time monitoring of aircraft health, simulate operational scenarios, and deliver predictive insights to prevent failures. These models help airlines shift from reactive to proactive maintenance and can simulate fuel-efficient trajectories while optimizing crew scheduling.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What emerging trends will shape aeronautical data analytics over the next decade?</div>
+                        <div class="answer">
+                            The next wave of innovation will include fully autonomous airports powered by digital twins and AI, maintenance logs integrated with blockchain to ensure record integrity, and hyper-personalized passenger journeys through real-time analytics. These technologies will complement existing predictive maintenance and fuel optimization programs, leading the industry toward more autonomous, secure, and customer-centric operations.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-insight">
+                    <h3>Key Insight from Professor Glanton</h3>
+                    <p>"The most successful aviation data analytics projects bridge the gap between algorithmic sophistication and operational practicality. A simple model that maintenance crews understand and trust will always outperform a complex black‑box solution, no matter how accurate its predictions might be in theory."</p>
+                </div>
+            </div>
+
+            <!-- Student Interview: Caiden Scott -->
+            <div class="interview-section">
+                <div class="interview-header">
+                    <div class="profile-img">CS</div>
+                    <div class="profile-info">
+                        <h3>Caiden Scott</h3>
+                        <p>Master's Student in Aeronautical Data Analytics</p>
+                        <p>Canada</p>
+                    </div>
+                </div>
+
+                <div class="qa-container">
+                    <div class="qa-item">
+                        <div class="question">What motivated you to pursue a Master's in aeronautical data analytics?</div>
+                        <div class="answer">
+                            I've always been passionate about aviation, but I discovered my interest in data science during my undergraduate studies. The combination of these two fields seemed perfect - aviation generates massive amounts of complex data, and data analytics can extract valuable insights to improve safety, efficiency, and sustainability. The opportunity to work on real-world aviation problems using cutting-edge data techniques was incredibly appealing.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What is the focus of your current research or projects?</div>
+                        <div class="answer">
+                            I'm currently working on a project that involves analyzing aircraft engine performance data to develop early warning systems for potential maintenance issues. We're using machine learning algorithms to detect subtle patterns in sensor data that might indicate component degradation before it becomes critical. The challenge is working with imbalanced datasets since actual failures are rare in commercial aviation.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What technical skills have been most valuable in your studies?</div>
+                        <div class="answer">
+                            Python programming has been essential, particularly with libraries like Pandas for data manipulation, Scikit-learn for machine learning, and TensorFlow for more complex neural networks. SQL for database management and data visualization tools like Tableau have also been crucial. Beyond technical skills, understanding aviation fundamentals and being able to communicate findings to non-technical stakeholders has been equally important.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">How do you access and work with aviation data in your program?</div>
+                        <div class="answer">
+                            Our university has partnerships with aviation industry partners, so we work with anonymized operational data under strict confidentiality agreements. We also use public datasets like NASA's engine degradation data and simulate certain scenarios when real data isn't available. The data governance and ethical considerations around aviation data have been an important part of our training.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What has been your biggest challenge in studying aeronautical data analytics?</div>
+                        <div class="answer">
+                            The biggest challenge has been bridging the gap between theoretical data science and practical aviation applications. The data is often messy, with missing values, different sampling rates across sensors, and complex temporal dependencies. Also, understanding the operational constraints and safety regulations that affect how data insights can be implemented in real aviation environments has been a steep learning curve.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What career paths are you considering after completing your Master's?</div>
+                        <div class="answer">
+                            I'm particularly interested in roles that combine technical data work with aviation domain knowledge. Positions in airline operations analytics, aircraft manufacturer data teams, or specialized aviation consulting firms appeal to me. I'd like to work on predictive maintenance systems or flight operations optimization - areas where data analytics can directly impact safety and efficiency.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question">What advice would you give to someone interested in this field?</div>
+                        <div class="answer">
+                            Build strong fundamentals in both data science and aviation principles. Don't underestimate the importance of domain knowledge - understanding how aircraft systems work is crucial for building meaningful models. Work on projects with real datasets, even if they're from public sources, and practice explaining technical concepts to non-technical audiences. The ability to bridge the gap between data science and aviation operations is what makes professionals in this field truly valuable.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-insight">
+                    <h3>Caiden's Perspective</h3>
+                    <p>"What excites me most about aeronautical data analytics is the tangible impact our work can have. Every improvement in predictive models or optimization algorithm doesn't just mean better numbers - it can translate to enhanced safety, reduced environmental impact, and more efficient air travel for everyone."</p>
+                </div>
+
+                <div class="interview-navigation">
+                    <a href="#experts" class="nav-btn">← View Industry Experts</a>
+                    <a href="#careers" class="nav-btn">Explore Career Paths →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Aero<span>Data</span> Insights</div>
+                <ul class="footer-links">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#experts">Industry Experts</a></li>
+                    <li><a href="#interviews">Interviews</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+                <p class="copyright">© 2025 AeroData Insights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
